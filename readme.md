@@ -110,7 +110,7 @@ CASTLE-Pegon fuses visual and textual modalities for post-OCR correction:
 |-------|-----|-----|-------------|
 | GPT-4o (best zero-shot) | 0.4243 | 0.9986 | — |
 | ByT5 text-only | 0.4134 | 0.9834 | −2.6% |
-| CASTLE-Pegon v1 (ByT5-base + ViT) | 0.3635 | — | −14.3% |
-| **CASTLE-Pegon v2 (ByT5-ft + ViT)** | **0.3456** | — | **−18.6%** |
+| Multimodal v1 (ByT5-base + ViT) | 0.3635 | — | −14.3% |
+| **Multimodal-Pegon v2 (ByT5-ft + ViT)** | **0.3456** | — | **−18.6%** |
 
 
