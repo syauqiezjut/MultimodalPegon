@@ -1,0 +1,28 @@
+CHARACTER-LEVEL CONFUSION RATES BEFORE/AFTER CORRECTION
+======================================================================
+
+Total substitution errors — GPT-4o: 5727  |  v2: 5485
+Reduction: 242 (4.2%)
+
+Pair                 Label             GPT-4o       v2        Δ  Reduction
+----------------------------------------------------------------------
+
+  PEGON-SPECIFIC PAIRS
+  ف→ڤ               fa→pa                 37       28       +9      24.3%
+  ج→ڄ               jim→ca                 0        0       +0       0.0%
+  غ→ڠ               ghain→nga             52        5      +47      90.4%
+  ك→ڮ               kaf→ga                25       58      -33    -132.0%
+  ن→ڽ               nun→nya                2        0       +2     100.0%
+
+  ARABIC DOT PAIRS
+  ط→ظ               tha→zha                0        0       +0       0.0%
+  ص→ض               shad→dhad              2        2       +0       0.0%
+  ع→غ               ain→ghain             20       14       +6      30.0%
+  ح→خ               ha→kha                 1        3       -2    -200.0%
+  د→ذ               dal→dzal               7        7       +0       0.0%
+  ر→ز               ra→zain               21        9      +12      57.1%
+  ب→ت               ba→ta                 10        8       +2      20.0%
+  ت→ث               ta→tsa                16       11       +5      31.2%
+  س→ش               sin→syin               5        3       +2      40.0%
+  ج→ح               jim→ha                 9        6       +3      33.3%
+

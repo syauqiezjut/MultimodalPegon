@@ -1,0 +1,67 @@
+{
+  "original": {
+    "name": "v2 full model (learned gate)",
+    "macro_cer": 0.362623313314857,
+    "macro_wer": 0.8506359338688125,
+    "n_samples": 506,
+    "per_kitab_cer": {
+      "Kitab01": 0.36077491133677714,
+      "Kitab02": 0.4400499198434397,
+      "Kitab03": 0.38636424249659973,
+      "Kitab04": 0.3951971499422391,
+      "Kitab05": 0.31402011050337375
+    }
+  },
+  "no_gate": {
+    "name": "v2 − gate (constant α=0.5)",
+    "macro_cer": 5.608508548176018,
+    "macro_wer": 1.0,
+    "n_samples": 506,
+    "per_kitab_cer": {
+      "Kitab01": 9.635147183545646,
+      "Kitab02": 4.265696189309531,
+      "Kitab03": 4.963012347436358,
+      "Kitab04": 3.599107895056884,
+      "Kitab05": 6.552196197346562
+    }
+  },
+  "direct_add": {
+    "name": "v2 − gate (h_t + h_cross)",
+    "macro_cer": 5.608508548176018,
+    "macro_wer": 1.0,
+    "n_samples": 506,
+    "per_kitab_cer": {
+      "Kitab01": 9.635147183545646,
+      "Kitab02": 4.265696189309531,
+      "Kitab03": 4.963012347436358,
+      "Kitab04": 3.599107895056884,
+      "Kitab05": 6.552196197346562
+    }
+  },
+  "gate_zero": {
+    "name": "v2 gate=0 (text-only, no visual)",
+    "macro_cer": 0.4203084976512772,
+    "macro_wer": 0.9396855375596417,
+    "n_samples": 506,
+    "per_kitab_cer": {
+      "Kitab01": 0.3856532066884436,
+      "Kitab02": 0.38199802319362536,
+      "Kitab03": 0.5101933758723038,
+      "Kitab04": 0.5716527113274094,
+      "Kitab05": 0.34814763901482604
+    }
+  },
+  "no_crossattn": {
+    "name": "v2 − cross-attention (text encoder only)",
+    "macro_cer": 0.4203084976512772,
+    "macro_wer": 0.9396855375596417,
+    "n_samples": 506,
+    "per_kitab_cer": {
+      "Kitab01": 0.3856532066884436,
+      "Kitab02": 0.38199802319362536,
+      "Kitab03": 0.5101933758723038,
+      "Kitab04": 0.5716527113274094,
+      "Kitab05": 0.34814763901482604
+    }
+  }
+}

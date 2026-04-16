@@ -1,0 +1,9 @@
+ABLATION RESULTS
+=================================================================
+Configuration                                 CER      WER    Δ CER
+-----------------------------------------------------------------
+v2 full model (learned gate)               0.3626   0.8506      ---
+v2 − gate (constant α=0.5)                 5.6085   1.0000 +1446.6%
+v2 − gate (h_t + h_cross)                  5.6085   1.0000 +1446.6%
+v2 gate=0 (text-only, no visual)           0.4203   0.9397   +15.9%
+v2 − cross-attention (text encoder only)   0.4203   0.9397   +15.9%

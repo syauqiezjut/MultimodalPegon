@@ -1,0 +1,22 @@
+{
+  "gpt4o": {
+    "total_subs": 5727,
+    "pegon_glyph": 116,
+    "arabic_dot_glyph": 91,
+    "glyph_total": 207,
+    "other_subs": 5520,
+    "insertions": 6903,
+    "deletions": 1980,
+    "total_errors": 14610
+  },
+  "v2": {
+    "total_subs": 5485,
+    "pegon_glyph": 91,
+    "arabic_dot_glyph": 63,
+    "glyph_total": 154,
+    "other_subs": 5331,
+    "insertions": 3654,
+    "deletions": 2152,
+    "total_errors": 11291
+  }
+}
