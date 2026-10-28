@@ -1,0 +1,146 @@
+{
+  "tier": 4,
+  "description": "Arabic-specialized OCR zero-shot on Pegon",
+  "eval_split": "test",
+  "eval_n": 506,
+  "engines": {
+    "qari": {
+      "name": "QARI-OCR-v0.2",
+      "hub_id": "NAMAA-Space/Qari-OCR-0.2.2.1-VL-2B-Instruct",
+      "params": "2B",
+      "prompt": "Read the Arabic text in this image accurately. Output only the text, nothing else.",
+      "description": "Fine-tuned Qwen2-VL-2B on Arabic printed OCR, SOTA WER=0.160",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 7,
+        "n_nonempty_pred": 499,
+        "coverage_pct": 98.6,
+        "cer_incl_empty": 1.0364,
+        "wer_incl_empty": 1.712,
+        "cer_excl_empty": 1.0369,
+        "wer_excl_empty": 1.722
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 39,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 1.4321,
+          "wer_incl_empty": 1.255,
+          "cer_excl_empty": 1.4321,
+          "wer_excl_empty": 1.255
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 3,
+          "n_nonempty_pred": 81,
+          "coverage_pct": 96.4,
+          "cer_incl_empty": 1.2948,
+          "wer_incl_empty": 1.4227,
+          "cer_excl_empty": 1.3057,
+          "wer_excl_empty": 1.4384
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 2,
+          "n_nonempty_pred": 34,
+          "coverage_pct": 94.4,
+          "cer_incl_empty": 2.5066,
+          "wer_incl_empty": 3.9918,
+          "cer_excl_empty": 2.5952,
+          "wer_excl_empty": 4.1678
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 1,
+          "n_nonempty_pred": 117,
+          "coverage_pct": 99.2,
+          "cer_incl_empty": 1.0363,
+          "wer_incl_empty": 2.6879,
+          "cer_excl_empty": 1.0366,
+          "wer_excl_empty": 2.7023
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 1,
+          "n_nonempty_pred": 228,
+          "coverage_pct": 99.6,
+          "cer_incl_empty": 0.6432,
+          "wer_incl_empty": 1.0348,
+          "cer_excl_empty": 0.6416,
+          "wer_excl_empty": 1.0349
+        }
+      }
+    },
+    "arabic-htr": {
+      "name": "Arabic-HTR-v2",
+      "hub_id": "sherif1313/Arabic-handwritten-OCR-4bit-Qwen2.5-VL-3B-v2",
+      "params": "3B-4bit",
+      "prompt": "Please transcribe the handwritten Arabic text in this image. Output only the transcribed text, nothing else.",
+      "description": "Fine-tuned Qwen2.5-VL-3B 4bit on 65K Arabic handwritten samples",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 0,
+        "n_nonempty_pred": 506,
+        "coverage_pct": 100.0,
+        "cer_incl_empty": 27.5608,
+        "wer_incl_empty": 11.1933,
+        "cer_excl_empty": 27.5608,
+        "wer_excl_empty": 11.1933
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 39,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 52.0127,
+          "wer_incl_empty": 16.4116,
+          "cer_excl_empty": 52.0127,
+          "wer_excl_empty": 16.4116
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 84,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 20.0782,
+          "wer_incl_empty": 6.625,
+          "cer_excl_empty": 20.0782,
+          "wer_excl_empty": 6.625
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 36,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 24.3404,
+          "wer_incl_empty": 13.0153,
+          "cer_excl_empty": 24.3404,
+          "wer_excl_empty": 13.0153
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 118,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 17.6816,
+          "wer_incl_empty": 12.5528,
+          "cer_excl_empty": 17.6816,
+          "wer_excl_empty": 12.5528
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 229,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 31.738,
+          "wer_incl_empty": 10.9933,
+          "cer_excl_empty": 31.738,
+          "wer_excl_empty": 10.9933
+        }
+      }
+    }
+  }
+}

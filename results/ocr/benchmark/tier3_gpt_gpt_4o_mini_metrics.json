@@ -1,0 +1,70 @@
+{
+  "tier": "3-gpt",
+  "model": "gpt-4o-mini",
+  "eval_split": "test",
+  "eval_n": 506,
+  "cost_usd": 1.6622,
+  "prompt": "Please transcribe the Arabic/Pegon handwritten text in this image. Output only the transcribed text,...",
+  "global": {
+    "n_total": 506,
+    "n_empty_pred": 0,
+    "n_nonempty_pred": 506,
+    "coverage_pct": 100.0,
+    "cer_incl_empty": 0.6628,
+    "wer_incl_empty": 1.1001,
+    "cer_excl_empty": 0.6628,
+    "wer_excl_empty": 1.1001
+  },
+  "per_kitab": {
+    "Kitab01": {
+      "n_total": 39,
+      "n_empty_pred": 0,
+      "n_nonempty_pred": 39,
+      "coverage_pct": 100.0,
+      "cer_incl_empty": 0.6061,
+      "wer_incl_empty": 0.9941,
+      "cer_excl_empty": 0.6061,
+      "wer_excl_empty": 0.9941
+    },
+    "Kitab02": {
+      "n_total": 84,
+      "n_empty_pred": 0,
+      "n_nonempty_pred": 84,
+      "coverage_pct": 100.0,
+      "cer_incl_empty": 0.8046,
+      "wer_incl_empty": 1.0556,
+      "cer_excl_empty": 0.8046,
+      "wer_excl_empty": 1.0556
+    },
+    "Kitab03": {
+      "n_total": 36,
+      "n_empty_pred": 0,
+      "n_nonempty_pred": 36,
+      "coverage_pct": 100.0,
+      "cer_incl_empty": 0.5948,
+      "wer_incl_empty": 1.0324,
+      "cer_excl_empty": 0.5948,
+      "wer_excl_empty": 1.0324
+    },
+    "Kitab04": {
+      "n_total": 118,
+      "n_empty_pred": 0,
+      "n_nonempty_pred": 118,
+      "coverage_pct": 100.0,
+      "cer_incl_empty": 0.6979,
+      "wer_incl_empty": 1.3328,
+      "cer_excl_empty": 0.6979,
+      "wer_excl_empty": 1.3328
+    },
+    "Kitab05": {
+      "n_total": 229,
+      "n_empty_pred": 0,
+      "n_nonempty_pred": 229,
+      "coverage_pct": 100.0,
+      "cer_incl_empty": 0.6131,
+      "wer_incl_empty": 1.0251,
+      "cer_excl_empty": 0.6131,
+      "wer_excl_empty": 1.0251
+    }
+  }
+}

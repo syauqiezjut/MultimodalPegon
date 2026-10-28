@@ -1,0 +1,77 @@
+{
+  "tier": 2,
+  "description": "ViT-based OCR zero-shot on Pegon",
+  "eval_split": "test",
+  "eval_n": 506,
+  "protocol": "zero-shot, no fine-tuning",
+  "engines": {
+    "got-ocr2": {
+      "name": "GOT-OCR2",
+      "hub_id": "models/got-ocr2",
+      "params": "580M",
+      "description": "General OCR Theory v2, ViT encoder + Transformer decoder",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 506,
+        "n_nonempty_pred": 0,
+        "coverage_pct": 0.0,
+        "cer_incl_empty": 1.0,
+        "wer_incl_empty": 1.0,
+        "cer_excl_empty": null,
+        "wer_excl_empty": null
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 39,
+          "n_nonempty_pred": 0,
+          "coverage_pct": 0.0,
+          "cer_incl_empty": 1.0,
+          "wer_incl_empty": 1.0,
+          "cer_excl_empty": null,
+          "wer_excl_empty": null
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 84,
+          "n_nonempty_pred": 0,
+          "coverage_pct": 0.0,
+          "cer_incl_empty": 1.0,
+          "wer_incl_empty": 1.0,
+          "cer_excl_empty": null,
+          "wer_excl_empty": null
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 36,
+          "n_nonempty_pred": 0,
+          "coverage_pct": 0.0,
+          "cer_incl_empty": 1.0,
+          "wer_incl_empty": 1.0,
+          "cer_excl_empty": null,
+          "wer_excl_empty": null
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 118,
+          "n_nonempty_pred": 0,
+          "coverage_pct": 0.0,
+          "cer_incl_empty": 1.0,
+          "wer_incl_empty": 1.0,
+          "cer_excl_empty": null,
+          "wer_excl_empty": null
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 229,
+          "n_nonempty_pred": 0,
+          "coverage_pct": 0.0,
+          "cer_incl_empty": 1.0,
+          "wer_incl_empty": 1.0,
+          "cer_excl_empty": null,
+          "wer_excl_empty": null
+        }
+      }
+    }
+  }
+}

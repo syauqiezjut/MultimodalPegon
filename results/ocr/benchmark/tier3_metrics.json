@@ -1,0 +1,213 @@
+{
+  "tier": 3,
+  "description": "General-purpose VLM zero-shot on Pegon",
+  "eval_split": "test",
+  "eval_n": 506,
+  "prompt": "Please transcribe the Arabic/Pegon handwritten text in this image. Output only the transcribed text, nothing else.",
+  "engines": {
+    "qwen-3b": {
+      "name": "Qwen2.5-VL-3B",
+      "hub_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "params": "3B",
+      "description": "Qwen2.5 VL 3B Instruct, general multimodal",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 0,
+        "n_nonempty_pred": 506,
+        "coverage_pct": 100.0,
+        "cer_incl_empty": 0.5299,
+        "wer_incl_empty": 1.1211,
+        "cer_excl_empty": 0.5299,
+        "wer_excl_empty": 1.1211
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 39,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.5049,
+          "wer_incl_empty": 0.9574,
+          "cer_excl_empty": 0.5049,
+          "wer_excl_empty": 0.9574
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 84,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.6608,
+          "wer_incl_empty": 1.1785,
+          "cer_excl_empty": 0.6608,
+          "wer_excl_empty": 1.1785
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 36,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.6101,
+          "wer_incl_empty": 1.0835,
+          "cer_excl_empty": 0.6101,
+          "wer_excl_empty": 1.0835
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 118,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.5805,
+          "wer_incl_empty": 1.5569,
+          "cer_excl_empty": 0.5805,
+          "wer_excl_empty": 1.5569
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 229,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.4475,
+          "wer_incl_empty": 0.9092,
+          "cer_excl_empty": 0.4475,
+          "wer_excl_empty": 0.9092
+        }
+      }
+    },
+    "qwen-7b": {
+      "name": "Qwen2.5-VL-7B",
+      "hub_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "params": "7B",
+      "description": "Qwen2.5 VL 7B Instruct, general multimodal",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 0,
+        "n_nonempty_pred": 506,
+        "coverage_pct": 100.0,
+        "cer_incl_empty": 0.524,
+        "wer_incl_empty": 1.0585,
+        "cer_excl_empty": 0.524,
+        "wer_excl_empty": 1.0585
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 39,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.6209,
+          "wer_incl_empty": 0.977,
+          "cer_excl_empty": 0.6209,
+          "wer_excl_empty": 0.977
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 84,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.4583,
+          "wer_incl_empty": 0.8999,
+          "cer_excl_empty": 0.4583,
+          "wer_excl_empty": 0.8999
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 36,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.5052,
+          "wer_incl_empty": 1.0519,
+          "cer_excl_empty": 0.5052,
+          "wer_excl_empty": 1.0519
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 118,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.5596,
+          "wer_incl_empty": 1.4985,
+          "cer_excl_empty": 0.5596,
+          "wer_excl_empty": 1.4985
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 229,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.5161,
+          "wer_incl_empty": 0.9048,
+          "cer_excl_empty": 0.5161,
+          "wer_excl_empty": 0.9048
+        }
+      }
+    },
+    "internvl-4b": {
+      "name": "InternVL2.5-4B",
+      "hub_id": "OpenGVLab/InternVL2_5-4B",
+      "params": "4B",
+      "description": "InternVL2.5 4B, strong OCRBench performance",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 0,
+        "n_nonempty_pred": 506,
+        "coverage_pct": 100.0,
+        "cer_incl_empty": 1.2431,
+        "wer_incl_empty": 1.7034,
+        "cer_excl_empty": 1.2431,
+        "wer_excl_empty": 1.7034
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 39,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 1.3599,
+          "wer_incl_empty": 1.5653,
+          "cer_excl_empty": 1.3599,
+          "wer_excl_empty": 1.5653
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 84,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 1.7912,
+          "wer_incl_empty": 2.0984,
+          "cer_excl_empty": 1.7912,
+          "wer_excl_empty": 2.0984
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 36,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 1.345,
+          "wer_incl_empty": 2.4624,
+          "cer_excl_empty": 1.345,
+          "wer_excl_empty": 2.4624
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 118,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.8892,
+          "wer_incl_empty": 1.3422,
+          "cer_excl_empty": 0.8892,
+          "wer_excl_empty": 1.3422
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 229,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 1.1886,
+          "wer_incl_empty": 1.6488,
+          "cer_excl_empty": 1.1886,
+          "wer_excl_empty": 1.6488
+        }
+      }
+    }
+  }
+}

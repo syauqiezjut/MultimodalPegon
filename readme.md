@@ -1,80 +1,73 @@
 # PegonKitab — Dataset and Code for Multimodal Post-OCR Correction of Pegon Manuscripts
 
-[![Paper](https://img.shields.io/badge/Paper-Pattern%20Recognition-blue)](https://doi.org/PLACEHOLDER)
-[![License](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
-[![Dataset](https://img.shields.io/badge/Dataset-Google%20Drive-orange)](https://drive.google.com/PLACEHOLDER)
+This repository contains the dataset splits, code, and evaluation outputs for the paper:
 
-This repository contains the dataset, code, and evaluation scripts for the paper:
-
-> **When Arabic OCR Fails: Benchmarking and Multimodal Post-OCR Correction for Pegon Manuscripts**  
-> Syauqie Muhammad Marier, Bayu Nadya Kusuma, Md Mehedi Hassan Dorjoy, Linan Zhu, Xiangjie Kong  
-
+> **When Arabic OCR Fails: Benchmarking and Multimodal Post-OCR Correction for Pegon Manuscripts**
+> Syauqie Muhammad Marier, Bayu Nadya Kusuma, Md Mehedi Hassan Dorjoy, Linan Zhu, Xiangjie Kong
+> *Pattern Recognition* (under review, PR-D-26-05439)
 
 ---
 
 ## Overview
 
-**Pegon** is a modified Arabic script used in Javanese and Sundanese Islamic manuscripts. Several Pegon-specific characters differ from standard Arabic by only one or two dots, causing systematic OCR failures when using Arabic-trained models.
+**Pegon** is a modified Arabic script used in Javanese and Sundanese Islamic manuscripts. Several Pegon-specific characters differ from standard Arabic letters by only one or two dots, so OCR systems trained on Arabic systematically confuse them.
 
 This work introduces:
-- **PegonKitab** — 2,801 annotated handwritten line images from 5 manuscripts
-- **A 16-model OCR benchmark** spanning traditional OCR, transformer HTR, vision-language models, and Arabic-specialized systems
-- **CASTLE-Pegon** — a multimodal post-OCR correction model (ByT5 + ViT) achieving 18.6% CER reduction over GPT-4o
+- **PegonKitab** — 2,801 annotated handwritten line images from five manuscripts
+- **A 16-system OCR benchmark** spanning traditional OCR, transformer HTR, vision–language models, Arabic-specialized systems, and text-only correction
+- **A multimodal post-OCR correction model** (ByT5 + ViT with gated cross-attention) that reduces CER by 18.6% relative to GPT-4o
 
 ---
 
 ## Dataset
 
-### PegonKitab Statistics
+### PegonKitab statistics
 
-| Kitab | Language | Script style | Train | Val | Test | Total |
-|-------|----------|-------------|-------|-----|------|-------|
-| Kitab01 | Javanese | — | 208 | 38 | 39 | 285 |
-| Kitab02 | Javanese | — | 462 | 84 | 84 | 630 |
-| Kitab03 | Sundanese | — | 197 | 36 | 36 | 269 |
-| Kitab04 | Sundanese | — | 650 | 118 | 118 | 886 |
-| Kitab05 | Javanese | — | 419 | 76 | 229 | 724 |
-| **Total** | | | **1,936** | **352** | **506** | **2,794** |
+Splits are page-level: all lines from the same page belong to the same split.
+
+| Kitab | Language | Train | Val | Test | Total |
+|-------|----------|------:|----:|-----:|------:|
+| Kitab01 | Javanese  | 168 | 30 | 39 | 237 |
+| Kitab02 | Javanese  | 211 | 29 | 84 | 324 |
+| Kitab03 | Sundanese | 107 | 12 | 36 | 155 |
+| Kitab04 | Sundanese | 476 | 96 | 118 | 690 |
+| Kitab05 | Javanese  | 974 | 192 | 229 | 1,395 |
+| **Total** | | **1,936** | **359** | **506** | **2,801** |
 
 ### Download
 
-| Resource | Link | Size |
-|----------|------|------|
-| Cropped line images (CroppedLines/) | [Google Drive](https://drive.google.com/drive/folders/1rtQpl-DuXsU3idGxg_jB9u5GrkWTlq8s?usp=share_link) | ~XX MB |
-| Annotation splits (JSON) | This repository (`data/splits/`) | ~XX MB |
+| Resource | Location |
+|----------|----------|
+| Annotation splits (JSON) | this repository, `data/splits/` |
+| Cropped line images | [Google Drive](https://drive.google.com/drive/folders/1rtQpl-DuXsU3idGxg_jB9u5GrkWTlq8s?usp=share_link) |
 
-### Data Format
+Place the cropped images under `data/processed/crops/<kitab_id>/` so that each record's `cropped_image_path` resolves relative to `data/processed/`.
 
-Each JSON file in `data/splits/` contains a list of records:
+### Record format
 
-```json
-{
-  "record_id": "Kitab01_001",
-  "kitab_id": "Kitab01",
-  "language": "javanese",
-  "image_filename": "Kitab01-001.png",
-  "ground_truth": "...",
-  "ocr_gpt4o": "..."
-}
-```
+Each file in `data/splits/` is a list of records:
 
 | Field | Description |
 |-------|-------------|
-| `record_id` | Unique identifier |
-| `kitab_id` | Source manuscript (Kitab01–05) |
-| `language` | `javanese` or `sundanese` |
-| `image_filename` | Filename in CroppedLines/ |
-| `ground_truth` | Human-annotated transcription |
-| `ocr_gpt4o` | GPT-4o zero-shot OCR output (used as correction input) |
+| `record_id` | Unique line identifier (`<kitab>_p<page>_<line_id>`) |
+| `kitab_id` | Source manuscript (`Kitab01`–`Kitab05`) |
+| `page_number`, `image_filename` | Source page |
+| `line_id`, `line_order`, `bbox` | Label Studio line ID, reading order, and bounding box (percent of page size) |
+| `original_width`, `original_height` | Page size in pixels |
+| `ground_truth` | Human transcription in Pegon |
+| `language` | Language label from the annotation metadata |
+| `cropped_image_path` | Relative path of the cropped line image |
+| `split` | `train`, `val`, or `test` |
+| `ocr_gpt4o` | GPT-4o zero-shot OCR output (input to the correction models) |
 
 ---
 
-## OCR Benchmark Results
+## OCR benchmark results
 
-Full results on PegonKitab test set (506 lines). CER and WER are macro-averaged. RC = recognition coverage (% of inputs producing non-empty output).
+PegonKitab test set (506 lines). CER and WER are macro-averaged after NFC normalization and removal of ZWNJ, ZWJ, and tatweel. RC = recognition coverage (% of inputs with non-empty output).
 
 | Tier | Model | RC (%) | CER | WER |
-|------|-------|--------|-----|-----|
+|------|-------|-------:|----:|----:|
 | 1 | Tesseract 5 | 65.2 | 0.7067 | 1.0348 |
 | 1 | EasyOCR | 100.0 | 0.6194 | 1.1256 |
 | 2 | TrOCR-small | 100.0 | 1.1649 | 1.4599 |
@@ -92,25 +85,71 @@ Full results on PegonKitab test set (506 lines). CER and WER are macro-averaged.
 | 5 | ByT5 (random aug.) | 100.0 | 0.4134 | 0.9834 |
 | 5 | ByT5 (glyph aug.) | 100.0 | 0.4816 | 0.9869 |
 
+Per-system metrics and predictions are in `results/ocr/benchmark/` (GPT-4o predictions: `results/ocr/tier3_gpt_gpt_4o_predictions.json`).
+
 ---
 
-## CASTLE-Pegon Model
+## Multimodal correction model
 
 ### Architecture
 
-CASTLE-Pegon fuses visual and textual modalities for post-OCR correction:
-- **Text branch**: ByT5 encoder (byte-level, no tokenization needed for Arabic script)
-- **Visual branch**: ViT encoder (patch-level image features from line image)
-- **Fusion**: Learned gating — α·text_features + (1−α)·visual_features
-- **Decoder**: ByT5 decoder with auto-regressive correction
+- **Text encoder**: ByT5-base encoder over the OCR transcript (byte-level, no vocabulary changes for Pegon letters)
+- **Visual encoder**: ViT-Base/16 over the line image, projected to the ByT5 hidden size
+- **Fusion**: 8-head cross-attention (text queries, image keys/values) followed by a learned gate, α = σ(W[h_t; h_cross] + b), with the bias initialized to −4
+- **Decoder**: ByT5-base decoder
+- **Training**: two phases — frozen ViT, then end-to-end fine-tuning with a lower ViT learning rate
 
 ### Results
 
-| Model | CER | WER | Δ vs GPT-4o |
-|-------|-----|-----|-------------|
-| GPT-4o (best zero-shot) | 0.4243 | 0.9986 | — |
+| Model | CER | WER | Δ CER vs GPT-4o |
+|-------|----:|----:|----------------:|
+| GPT-4o (zero-shot) | 0.4243 | 0.9986 | — |
 | ByT5 text-only | 0.4134 | 0.9834 | −2.6% |
-| Multimodal v1 (ByT5-base + ViT) | 0.3635 | — | −14.3% |
-| **Multimodal-Pegon v2 (ByT5-ft + ViT)** | **0.3456** | — | **−18.6%** |
+| ByT5-base + ViT (v1) | 0.3635 | 0.8661 | −14.3% |
+| **ByT5-ft + ViT (v2)** | **0.3456** | **0.8306** | **−18.6%** |
 
+Test predictions for v1 and v2 are in `results/ocr/step1_vit_fusion/` and `results/ocr/step1v2_finetuned_vit/`. Model checkpoints are not released.
 
+---
+
+## Repository layout
+
+```
+config.py                         paths (override with PEGON_BASE_DIR, PEGON_KITAB_DIR, PEGON_ENV)
+data/splits/                      train / val / test annotation splits
+data/confusion_matrix/            glyph similarity matrix used for augmentation
+data/confusion_matrix/table3_version/  matrix behind Table 3 of the paper
+src/
+  phase01_parse.py … phase04_split.py   build the dataset from Label Studio exports
+  phase05_ocr_tier*.py, phase05_ocr_gpt4o_*.py   OCR benchmark (Tiers 1–4)
+  glyph_confusion_table3.py, phase06_glyph_confusion.py   glyph similarity matrix
+  phase07_augment.py, phase08_byt5.py   text-only correction (Tier 5)
+  model_step1.py, dataset_castle.py, train_step1.py, train_step1_v2.py   multimodal model (v1, v2)
+  ablation_eval.py, extract_gate_values.py   ablation and gate analysis
+  char_confusion_rates.py, quantify_error_types.py   error analysis
+results/                          benchmark outputs, predictions, ablation, error analysis
+analysis/figures/                 paper figures
+```
+
+The training and analysis scripts were run on AutoDL; their configuration sections still contain the original absolute paths (`/root/autodl-tmp/castle-pegon`), which should be edited before running. OpenAI-based scripts read the key from the `OPENAI_API_KEY` environment variable.
+
+### Paper tables and their sources
+
+| Paper | Script | Output |
+|-------|--------|--------|
+| Table 2 | `phase01`–`phase04` | `data/splits/` |
+| Table 3, Fig. 2 | `glyph_confusion_table3.py` | `data/confusion_matrix/table3_version/` |
+| Table 5 | `phase05_ocr_*`, `phase08_byt5.py` | `results/ocr/benchmark/` |
+| Tables 6–7 | `train_step1.py`, `train_step1_v2.py` | `results/ocr/step1*/predictions_test.json` |
+| Table 8 | `ablation_eval.py` | `results/ablation/` |
+| Table 9, §5.6.2 | `char_confusion_rates.py`, `quantify_error_types.py` | `results/error_analysis/` |
+
+---
+
+## Citation
+
+Citation details will be added once the paper is published.
+
+## License
+
+Annotations and code are released under CC BY 4.0.

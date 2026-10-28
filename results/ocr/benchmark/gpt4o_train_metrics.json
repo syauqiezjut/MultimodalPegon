@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4o",
+  "split": "train",
+  "n": 1936,
+  "n_empty": 0,
+  "coverage_pct": 100.0,
+  "cer": 0.5137
+}

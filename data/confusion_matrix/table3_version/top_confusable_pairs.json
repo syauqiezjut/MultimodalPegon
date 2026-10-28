@@ -1,0 +1,212 @@
+[
+  {
+    "char_i": "ي",
+    "char_j": "ۑ",
+    "name_i": "ya",
+    "name_j": "nya2",
+    "similarity": 0.7756
+  },
+  {
+    "char_i": "ط",
+    "char_j": "ظ",
+    "name_i": "tha",
+    "name_j": "zha",
+    "similarity": 0.752
+  },
+  {
+    "char_i": "ج",
+    "char_j": "ح",
+    "name_i": "jim",
+    "name_j": "ha_kecil",
+    "similarity": 0.7448
+  },
+  {
+    "char_i": "ص",
+    "char_j": "ض",
+    "name_i": "shad",
+    "name_j": "dhad",
+    "similarity": 0.7008
+  },
+  {
+    "char_i": "ي",
+    "char_j": "ى",
+    "name_i": "ya",
+    "name_j": "alif_maqsura",
+    "similarity": 0.6799
+  },
+  {
+    "char_i": "ج",
+    "char_j": "ڄ",
+    "name_i": "jim",
+    "name_j": "ca",
+    "similarity": 0.6692
+  },
+  {
+    "char_i": "ع",
+    "char_j": "غ",
+    "name_i": "ain",
+    "name_j": "ghain",
+    "similarity": 0.6663
+  },
+  {
+    "char_i": "ح",
+    "char_j": "خ",
+    "name_i": "ha_kecil",
+    "name_j": "kha",
+    "similarity": 0.6491
+  },
+  {
+    "char_i": "ى",
+    "char_j": "ۑ",
+    "name_i": "alif_maqsura",
+    "name_j": "nya2",
+    "similarity": 0.6397
+  },
+  {
+    "char_i": "ح",
+    "char_j": "ڄ",
+    "name_i": "ha_kecil",
+    "name_j": "ca",
+    "similarity": 0.6113
+  },
+  {
+    "char_i": "ج",
+    "char_j": "خ",
+    "name_i": "jim",
+    "name_j": "kha",
+    "similarity": 0.5679
+  },
+  {
+    "char_i": "ت",
+    "char_j": "ث",
+    "name_i": "ta",
+    "name_j": "tsa",
+    "similarity": 0.5369
+  },
+  {
+    "char_i": "د",
+    "char_j": "ذ",
+    "name_i": "dal",
+    "name_j": "dzal",
+    "similarity": 0.5346
+  },
+  {
+    "char_i": "س",
+    "char_j": "ش",
+    "name_i": "sin",
+    "name_j": "syin",
+    "similarity": 0.5254
+  },
+  {
+    "char_i": "ك",
+    "char_j": "ڮ",
+    "name_i": "kaf",
+    "name_j": "ga",
+    "similarity": 0.5245
+  },
+  {
+    "char_i": "ف",
+    "char_j": "ڤ",
+    "name_i": "fa",
+    "name_j": "pa",
+    "similarity": 0.5111
+  },
+  {
+    "char_i": "غ",
+    "char_j": "ڠ",
+    "name_i": "ghain",
+    "name_j": "nga",
+    "similarity": 0.5041
+  },
+  {
+    "char_i": "خ",
+    "char_j": "ڄ",
+    "name_i": "kha",
+    "name_j": "ca",
+    "similarity": 0.4687
+  },
+  {
+    "char_i": "ل",
+    "char_j": "ن",
+    "name_i": "lam",
+    "name_j": "nun",
+    "similarity": 0.4548
+  },
+  {
+    "char_i": "ر",
+    "char_j": "ز",
+    "name_i": "ra",
+    "name_j": "zain",
+    "similarity": 0.4407
+  },
+  {
+    "char_i": "ع",
+    "char_j": "ڠ",
+    "name_i": "ain",
+    "name_j": "nga",
+    "similarity": 0.4374
+  },
+  {
+    "char_i": "ن",
+    "char_j": "ڽ",
+    "name_i": "nun",
+    "name_j": "nya",
+    "similarity": 0.4311
+  },
+  {
+    "char_i": "ث",
+    "char_j": "ڽ",
+    "name_i": "tsa",
+    "name_j": "nya",
+    "similarity": 0.4209
+  },
+  {
+    "char_i": "ب",
+    "char_j": "ت",
+    "name_i": "ba",
+    "name_j": "ta",
+    "similarity": 0.3984
+  },
+  {
+    "char_i": "س",
+    "char_j": "ص",
+    "name_i": "sin",
+    "name_j": "shad",
+    "similarity": 0.364
+  },
+  {
+    "char_i": "ه",
+    "char_j": "ة",
+    "name_i": "ha_besar",
+    "name_j": "ta_marbuta",
+    "similarity": 0.3541
+  },
+  {
+    "char_i": "ب",
+    "char_j": "ث",
+    "name_i": "ba",
+    "name_j": "tsa",
+    "similarity": 0.3447
+  },
+  {
+    "char_i": "ث",
+    "char_j": "ڤ",
+    "name_i": "tsa",
+    "name_j": "pa",
+    "similarity": 0.3287
+  },
+  {
+    "char_i": "ڤ",
+    "char_j": "ڠ",
+    "name_i": "pa",
+    "name_j": "nga",
+    "similarity": 0.323
+  },
+  {
+    "char_i": "ع",
+    "char_j": "ء",
+    "name_i": "ain",
+    "name_j": "hamza",
+    "similarity": 0.3125
+  }
+]

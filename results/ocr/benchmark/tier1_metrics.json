@@ -1,0 +1,140 @@
+{
+  "tier": 1,
+  "description": "Traditional OCR lower bound",
+  "eval_split": "test",
+  "eval_n": 506,
+  "engines": {
+    "Tesseract": {
+      "ocr_field": "ocr_tesseract",
+      "eval_split": "test",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 176,
+        "n_nonempty_pred": 330,
+        "coverage_pct": 65.2,
+        "cer_incl_empty": 0.7067,
+        "wer_incl_empty": 1.0348,
+        "cer_excl_empty": 0.5503,
+        "wer_excl_empty": 1.0533
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 22,
+          "n_nonempty_pred": 17,
+          "coverage_pct": 43.6,
+          "cer_incl_empty": 0.8556,
+          "wer_incl_empty": 1.1626,
+          "cer_excl_empty": 0.6687,
+          "wer_excl_empty": 1.373
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 5,
+          "n_nonempty_pred": 79,
+          "coverage_pct": 94.0,
+          "cer_incl_empty": 0.4974,
+          "wer_incl_empty": 0.9518,
+          "cer_excl_empty": 0.4655,
+          "wer_excl_empty": 0.9487
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 4,
+          "n_nonempty_pred": 32,
+          "coverage_pct": 88.9,
+          "cer_incl_empty": 0.7734,
+          "wer_incl_empty": 1.0419,
+          "cer_excl_empty": 0.7451,
+          "wer_excl_empty": 1.0471
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 36,
+          "n_nonempty_pred": 82,
+          "coverage_pct": 69.5,
+          "cer_incl_empty": 0.8476,
+          "wer_incl_empty": 1.157,
+          "cer_excl_empty": 0.7807,
+          "wer_excl_empty": 1.226
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 109,
+          "n_nonempty_pred": 120,
+          "coverage_pct": 52.4,
+          "cer_incl_empty": 0.6751,
+          "wer_incl_empty": 0.9793,
+          "cer_excl_empty": 0.3799,
+          "wer_excl_empty": 0.9605
+        }
+      }
+    },
+    "EasyOCR": {
+      "ocr_field": "ocr_easyocr",
+      "eval_split": "test",
+      "global": {
+        "n_total": 506,
+        "n_empty_pred": 0,
+        "n_nonempty_pred": 506,
+        "coverage_pct": 100.0,
+        "cer_incl_empty": 0.6194,
+        "wer_incl_empty": 1.1256,
+        "cer_excl_empty": 0.6194,
+        "wer_excl_empty": 1.1256
+      },
+      "per_kitab": {
+        "Kitab01": {
+          "n_total": 39,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 39,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.5042,
+          "wer_incl_empty": 0.9535,
+          "cer_excl_empty": 0.5042,
+          "wer_excl_empty": 0.9535
+        },
+        "Kitab02": {
+          "n_total": 84,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 84,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.4326,
+          "wer_incl_empty": 0.9003,
+          "cer_excl_empty": 0.4326,
+          "wer_excl_empty": 0.9003
+        },
+        "Kitab03": {
+          "n_total": 36,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 36,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.6818,
+          "wer_incl_empty": 1.0427,
+          "cer_excl_empty": 0.6818,
+          "wer_excl_empty": 1.0427
+        },
+        "Kitab04": {
+          "n_total": 118,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 118,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.6644,
+          "wer_incl_empty": 1.4793,
+          "cer_excl_empty": 0.6644,
+          "wer_excl_empty": 1.4793
+        },
+        "Kitab05": {
+          "n_total": 229,
+          "n_empty_pred": 0,
+          "n_nonempty_pred": 229,
+          "coverage_pct": 100.0,
+          "cer_incl_empty": 0.6746,
+          "wer_incl_empty": 1.0683,
+          "cer_excl_empty": 0.6746,
+          "wer_excl_empty": 1.0683
+        }
+      }
+    }
+  }
+}

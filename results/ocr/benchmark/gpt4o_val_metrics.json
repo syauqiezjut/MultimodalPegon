@@ -1,0 +1,9 @@
+{
+  "model": "gpt-4o",
+  "split": "val",
+  "n": 359,
+  "n_empty": 0,
+  "coverage_pct": 100.0,
+  "cer": 0.5224,
+  "wer": 1.1035
+}
